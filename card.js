@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 class Card {
 
   constructor(rank, suit) {
@@ -26,9 +28,13 @@ class Deck {
   deal() {
     return this.cards.shift();
   }
+
+  shuffle() {
+    this.cards = _.shuffle(this.cards);
+  }
 }
 
 const deck = new Deck();
-
+deck.shuffle();
 const card = deck.deal();
 card.outputCard();
