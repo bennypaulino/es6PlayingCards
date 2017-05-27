@@ -23,8 +23,12 @@ class Deck {
       });
     });
   }
+  deal() {
+    return this.cards.shift();
+  }
 }
 
 const deck = new Deck();
 
-console.log(deck);
+const card = deck.deal();
+card.outputCard();
